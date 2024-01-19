@@ -1,0 +1,13 @@
+[Unit]
+Description=cloudflared
+After=network.target
+
+[Service]
+TimeoutStartSec=0
+Type=notify
+ExecStart=/usr/bin/cloudflared --edge-ip-version 6 --no-autoupdate tunnel run --token "<REDACTED>"
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

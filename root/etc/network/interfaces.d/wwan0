@@ -1,0 +1,15 @@
+auto wwan0
+iface wwan0 inet manual
+     pre-up echo "Starting wwan0..."
+     pre-up ifconfig wwan0 down
+     # pre-up echo Y >/sys/class/net/wwan0/qmi/raw_ip
+     pre-up for _ in $(seq 1 20); do /usr/bin/test -c /dev/cdc-wdm0 && break; /bin/sleep 1; done
+     pre-up echo "Starting wwan0...(ready)."
+     pre-up for _ in $(seq 1 20); do /usr/bin/qmicli --device=/dev/cdc-wdm0 --device-open-proxy --wds-start-network="apn=fast.t-mobile.com" --client-no-release-cid && break; echo "wwan0 retry1"; /bin/sleep 2; done
+     pre-up echo "Starting wwan0...(qmidone)."
+     pre-up for _ in $(seq 1 20); do /usr/sbin/ifconfig wwan0 up; (ifconfig wwan0 | grep wwan0 | grep -q POINTOPOINT) && break; echo "wwan0 retry2"; /bin/sleep 1; done
+     pre-up ifconfig
+     pre-up echo "just wwan"
+     pre-up ifconfig wwan0
+     pre-up echo "Starting wwan0...(interface)."
+     post-down /usr/bin/qmi-network /dev/cdc-wdm0 stop
