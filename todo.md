@@ -14,3 +14,4 @@ Hardware:
 - [ ] Replace solar controller with lower power controller?
 - [ ] Add weather station features (wind / temp)
 - [ ] 3D print mounting parts (instead of electrical tape)
+- [ ] Improve solar panel mounting (a few inches off the ground at least)
