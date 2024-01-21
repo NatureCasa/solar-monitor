@@ -56,7 +56,7 @@ class Sugar:
 class Monitor:
     _DELAY: int = 60
     _PINGTIME: int = 300  # 5 minutes
-    _BAD_PING_COUNT: int = 3  # 15 minutes
+    _BAD_PING_COUNT: int = 12  # 60 minutes
     _BAD_POWERED_COUNT: int = 3  # 3 minutes
     _WIFI_DISABLE_COUNT: int = 10  # 10 minutes
 
