@@ -1,6 +1,6 @@
 # solar-monitor todo
 
-Near term:
+Software:
 - [ ] Report power on / power off events (remote and local)
 - [ ] Improve battery life by powering off cell connection
 - [ ] Enable watchdog
@@ -9,7 +9,8 @@ Near term:
 - [ ] Record images / info locally to be sent later
 - [ ] Add motion events
 
-Next revision:
+Hardware:
 - [ ] Debug RS485/TTL communication
 - [ ] Replace solar controller with lower power controller?
 - [ ] Add weather station features (wind / temp)
+- [ ] 3D print mounting parts (instead of electrical tape)
