@@ -15,3 +15,4 @@ Hardware:
 - [ ] Add weather station features (wind / temp)
 - [ ] 3D print mounting parts (instead of electrical tape)
 - [ ] Improve solar panel mounting (a few inches off the ground at least)
+- [ ] Measure isolated power usage of all devices in all states
