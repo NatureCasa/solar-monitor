@@ -4,6 +4,7 @@ Parts:
 - [MPPT Solar Charge Controller](https://www.amazon.com/dp/B0CFKWP8FB)
 - [Raspberry Pi Zero 2](https://www.amazon.com/Raspberry-Zero-Bluetooth-RPi-2W/dp/B09LH5SBPS)
 - [Raspberry Pi Camera](https://www.amazon.com/dp/B01ER2SKFS)
+- [Camera Suction Mount (ZeroView)](https://www.aliexpress.com/i/2251832720397495.html)
 - [PiSugar 3](https://www.amazon.com/Portable-Pwnagotchi-Raspberry-Accessories-handhold/dp/B09MJ8SCGD)
 - [Pole Mount](https://www.amazon.com/dp/B0B4RB63RK)
 - [SAE Extension Cable](https://www.amazon.com/dp/B08B85SW5C)
