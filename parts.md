@@ -22,7 +22,7 @@ Parts:
 - [Electrical Tape](https://www.amazon.com/dp/B081TJZW2M)
 - [Wago Connectors](https://www.amazon.com/gp/product/B085P2WT8K)
 - [LTE Antennas](https://www.amazon.com/RHsia-700-2700Mhz-Directional-Connector-Wireless/dp/B07TTY8W2Y)
-- [Cable Ties](amazon.com/Self-Locking-CableTies-Multi-Purpose-Management-Workshop-White/dp/B097M825XG)
+- [Cable Ties](https://amazon.com/Self-Locking-CableTies-Multi-Purpose-Management-Workshop-White/dp/B097M825XG)
 
 Tools:
 - [Step Drill Bit](https://www.amazon.com/dp/B0CBJMNJXD)
