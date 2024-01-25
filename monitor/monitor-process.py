@@ -56,6 +56,7 @@ class Sugar:
 class Monitor:
     _DELAY: int = 60
     _PINGTIME: int = 300  # 5 minutes
+    _SNAPTIME: int = 600  # 10 minutes
     _BAD_PING_COUNT: int = 12  # 60 minutes
     _BAD_POWERED_COUNT: int = 3  # 3 minutes
     _WIFI_DISABLE_COUNT: int = 10  # 10 minutes
@@ -64,12 +65,20 @@ class Monitor:
         self._sugar = Sugar()
         now = time.monotonic()
         self._last_ping = now
+        self._last_snap = now
+        self._snap_count = 0
         self._loop_count = 0
         self._bad_powered = 0
         self._bad_ping = 0
 
     def is_done(self) -> bool:
         return os.path.isfile("/tmp/monitor-stop.txt")
+
+    def snapshot(self):
+        data = self._sugar.run('./camera.py')
+        if not data:
+            return False
+        return True
 
     def ping(self):
         # data = self._sugar.run('ping 2606:4700:4709::1111 -c 1 | grep "1 received"')
@@ -81,7 +90,8 @@ class Monitor:
 
     def run(self):
         self._loop_count += 1
-        print("loop", self._loop_count, "bad_powered", self._bad_powered, "bad_ping", self._bad_ping)
+        print("loop", self._loop_count, "bad_powered", self._bad_powered, "bad_ping", self._bad_ping,
+              "images", self._snap_count)
 
         if self._loop_count == self._WIFI_DISABLE_COUNT:
             self._sugar.wifi_disable()
@@ -106,6 +116,13 @@ class Monitor:
             # print("alive", self._bad_ping, is_alive)
             if self._bad_ping > self._BAD_PING_COUNT:
                 self._sugar.reboot()
+
+        now = time.monotonic()
+        if now - self._last_snap > self._SNAPTIME:
+            ok = self.snapshot()
+            if ok:
+                self._snap_count += 1
+            self._last_snap = time.monotonic()
 
     def loop(self):
         while not self.is_done():
