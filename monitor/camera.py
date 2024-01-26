@@ -40,7 +40,7 @@ class Camera:
             return
         file_str = f"images/{time_str}.jpg"
         Path("images").mkdir(parents=True, exist_ok=True)
-        if not os.path.exists(time_str):
+        if not os.path.exists(file_str):
             self.snapshot(file_str)
 
 
