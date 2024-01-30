@@ -33,7 +33,7 @@ class Sugar:
         return val == "true"
 
     def is_powered(self):
-        data = self.run('echo "get battery_output_enabled" | nc -q 0 127.0.0.1 8423')
+        data = self.run('echo "get battery_power_plugged" | nc -q 0 127.0.0.1 8423')
         powered = self._as_bool(data)
         return powered
 
