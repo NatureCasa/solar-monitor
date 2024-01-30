@@ -28,7 +28,7 @@ class Camera:
         return data
 
     def snapshot(self, filename):
-        data = self.run(f"libcamera-still -o {filename}")
+        data = self.run(f"libcamera-still --rotation 180 -o {filename}")
         if data:
             print(f"Captured {filename}")
 
