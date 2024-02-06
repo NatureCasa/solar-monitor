@@ -6,7 +6,7 @@ Software:
 - [ ] Enable watchdog
 - [ ] Prevent charging of LiPo during low temperature
 - [ ] Send images automatically
-- [ ] Record images / info locally to be sent later
+- [x] Record images / info locally to be sent later
 - [ ] Add motion events
 
 Hardware:
@@ -16,3 +16,4 @@ Hardware:
 - [ ] 3D print mounting parts (instead of electrical tape)
 - [ ] Improve solar panel mounting (a few inches off the ground at least)
 - [ ] Measure isolated power usage of all devices in all states
+- [ ] Replace Main & Diversity LTE antenna with something better... Omni-directional or directional?
