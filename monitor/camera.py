@@ -36,7 +36,7 @@ class Camera:
         dt = datetime.datetime.now()
         time_str = dt.strftime("%Y%m%d%H")
         # lets not bother capturing early morning or late night images
-        if dt.hour < 6 or dt.hour > 19:
+        if dt.hour < 6 or dt.hour > 21:
             return
         file_str = f"images/{time_str}.jpg"
         Path("images").mkdir(parents=True, exist_ok=True)
